@@ -30,14 +30,14 @@ I compile project by following instructions:
 #### px, py, vx, vy output coordinates must have an RMSE <= [.11, .11, 0.52, 0.52] when using the file: "obj_pose-laser-radar-synthetic-input.txt" which is the same data file the simulator uses for Dataset 1.
 My RMSE is [.1057, .0953, 0.4981, 0.4716], here is a screenshot:
 <div class="test">
-<img src="Docs/RMSE.png" width="300" />
+<img src="Docs/RMSE.png" width="600" />
 </div>
 
 
 #### Your Sensor Fusion algorithm follows the general processing flow as taught in the preceding lessons. 
 Here is a screenshot in the lesson I am following by :
 <div class="test">
-<img src="Docs/framework.png" width="300" />
+<img src="Docs/framework.png" width="600" />
 </div>
 
 #### Your Kalman Filter algorithm handles the first measurements appropriately.
