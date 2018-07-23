@@ -35,7 +35,7 @@ My RMSE is [.1057, .0953, 0.4981, 0.4716], here is a screenshot:
 
 
 #### 3.Your Sensor Fusion algorithm follows the general processing flow as taught in the preceding lessons. 
-Here is a screenshot in the lesson I am following by :
+Here is a screenshot in the lesson that I followed by :
 <div class="test">
 <img src="Docs/framework.png" width="600" />
 </div>
@@ -50,6 +50,7 @@ previous_timestamp_
 
   
 #### 5.Your Kalman Filter algorithm first predicts then updates. 
+Here is a code fragment about predicts and predicts:
 ```
   ekf_.Predict();
 
@@ -78,5 +79,5 @@ VectorXd KalmanFilter::ConvertCartesianToPolar(const VectorXd& cartesianvalue)
 ```
 
 #### 7.Your algorithm should avoid unnecessary calculations.
-I tried to do it, but I can't confirm that I did the best.
+I tried to do it, but I'm not sure that I did the best.
 
