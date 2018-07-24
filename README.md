@@ -75,7 +75,6 @@ Here is a code fragment about predicts and predicts:
 #### 6.Your Kalman Filter can handle radar and lidar measurements.
 convert the Cartesian  coordinates to the Polar coordinates:
 ```
-
   float ro = measurement_pack.raw_measurements_(0);
   float theta = measurement_pack.raw_measurements_(1) * 180.0 / PI;
   float ro_dot = measurement_pack.raw_measurements_(2);
