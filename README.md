@@ -73,9 +73,20 @@ Here is a code fragment about predicts and predicts:
 ```
 
 #### 6.Your Kalman Filter can handle radar and lidar measurements.
-I defined a function to convert the Cartesian  coordinates to the Polar coordinates:
+convert the Cartesian  coordinates to the Polar coordinates:
 ```
-VectorXd KalmanFilter::ConvertCartesianToPolar(const VectorXd& cartesianvalue)
+
+  float ro = measurement_pack.raw_measurements_(0);
+  float theta = measurement_pack.raw_measurements_(1) * 180.0 / PI;
+  float ro_dot = measurement_pack.raw_measurements_(2);
+
+  float px = ro * cos(theta);
+  float py = ro * sin(theta);
+  float vx = ro_dot * cos(theta);
+  float vy = ro_dot * sin(theta);
+
+  ekf_.x_ << px, py, vx, vy;
+
 ```
 
 #### 7.Your algorithm should avoid unnecessary calculations.
