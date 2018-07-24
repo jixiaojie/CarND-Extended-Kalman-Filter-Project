@@ -45,18 +45,6 @@ public:
   void Init(Eigen::VectorXd &x_in, Eigen::MatrixXd &P_in, Eigen::MatrixXd &F_in,
       Eigen::MatrixXd &H_in, Eigen::MatrixXd &R_in, Eigen::MatrixXd &Q_in);
 
-
-  /**
-  * Convert radar from polar to cartesian coordinates.
-  */
-  Eigen::VectorXd ConvertPolarToCartesian(const Eigen::VectorXd& polarvalue);
-
-  /**
-  * Convert radar from cartesian to polar coordinates.
-  */
-  Eigen::VectorXd ConvertCartesianToPolar(const Eigen::VectorXd& cartesianvalue);
-
-
   /**
    * Prediction Predicts the state and the state covariance
    * using the process model

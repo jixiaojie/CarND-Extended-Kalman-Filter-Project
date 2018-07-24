@@ -28,7 +28,7 @@ I compile project by following instructions:
 5. ./ExtendedKF
 
 #### 2.px, py, vx, vy output coordinates must have an RMSE <= [.11, .11, 0.52, 0.52] when using the file: "obj_pose-laser-radar-synthetic-input.txt" which is the same data file the simulator uses for Dataset 1.
-My RMSE is [.1057, .0953, 0.4981, 0.4716], here is a screenshot:
+My RMSE is [.0973, .0855, 0.4513, 0.4399], here is a screenshot:
 <div class="test">
 <img src="Docs/RMSE.png" width="600" />
 </div>

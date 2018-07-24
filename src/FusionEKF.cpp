@@ -2,6 +2,7 @@
 #include "tools.h"
 #include "Eigen/Dense"
 #include <iostream>
+#define PI 3.1415926
 
 using namespace std;
 using Eigen::MatrixXd;
@@ -46,7 +47,7 @@ FusionEKF::FusionEKF() {
            0, 0, 0, 0;
 
   noise_ax = 9;
-  noise_ay = 5;
+  noise_ay = 9;
 
 
 }
@@ -98,7 +99,19 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       /**
       Convert radar from polar to cartesian coordinates and initialize state.
       */
-      ekf_.x_ = ekf_.ConvertPolarToCartesian(measurement_pack.raw_measurements_);
+
+      float ro = measurement_pack.raw_measurements_(0);
+      float theta = measurement_pack.raw_measurements_(1) * 180.0 / PI;
+      float ro_dot = measurement_pack.raw_measurements_(2);
+    
+      float px = ro * cos(theta);
+      float py = ro * sin(theta);
+      float vx = ro_dot * cos(theta);
+      float vy = ro_dot * sin(theta);
+
+      ekf_.x_ << px, py, vx, vy;
+
+
     }
     else if (measurement_pack.sensor_type_ == MeasurementPackage::LASER) {
       /**
